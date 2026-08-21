@@ -29,3 +29,47 @@ const questions = [
         answer: "C"
     }
 ];
+
+
+const quiz = document.getElementById("quiz");
+
+questions.forEach((q, index) => {
+
+    const questionDiv = document.createElement("div");
+
+    questionDiv.innerHTML = `
+        <h2>Câu ${index + 1}</h2>
+
+        <p>${q.question}</p>
+
+        <label>
+            <input type="radio" name="question${index}" value="A">
+            A. ${q.options[0]}
+        </label>
+
+        <br>
+
+        <label>
+            <input type="radio" name="question${index}" value="B">
+            B. ${q.options[1]}
+        </label>
+
+        <br>
+
+        <label>
+            <input type="radio" name="question${index}" value="C">
+            C. ${q.options[2]}
+        </label>
+
+        <br>
+
+        <label>
+            <input type="radio" name="question${index}" value="D">
+            D. ${q.options[3]}
+        </label>
+
+        <hr>
+    `;
+
+    quiz.appendChild(questionDiv);
+});
